@@ -1,0 +1,36 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <div class="container mt-5 main-section">
+                <h3 class="font-weight-bold">
+                    <%= job.companyName %>
+                </h3>
+                <h4>
+                    About the company:
+                    <span class="text-muted" style="font-size:20px"><%= job.aboutCompany %></span>
+                </h4>
+                <hr>
+                <p class="font-weight-bold">
+                    Employees are required to work as:
+                    <span class="text-muted" style="font-size:20px"><%= job.workType %></span>
+                </p>
+                <p>
+                    <%= job.requirement %>
+                        <br>
+                        <%= job.jobDescription %>
+                </p>
+
+                <hr>
+
+                <div class="d-flex align-items-center">
+                    <form method="post" action="/delete-job">
+                        <input type="hidden" value="<%= job._id %>" name="jobId" />
+                        <button class="btn btn-danger" type="submit">Delete job</button>
+                    </form>
+                    <a href="/edit-job/<%= job._id %>" class="mx-2 btn btn-primary">Edit Job Info</a>
+                </div>
+            </div>
+            <%- include('../includes/end.ejs') %>
