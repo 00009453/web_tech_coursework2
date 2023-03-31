@@ -20,7 +20,7 @@ app.use(errorPage.getErrorPage);
 
 mongoose
   .connect(
-    "mongodb+srv://quiz_test_app:wiut_student@cluster0.dsykjky.mongodb.net/Students"
+    "mongodb+srv://00009453:wiut_student@cluster0.lzlxxau.mongodb.net/jobs"
   )
   .then((result) => {
     app.listen(process.env.PORT || 4000);
